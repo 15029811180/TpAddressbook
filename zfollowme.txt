@@ -1,0 +1,30 @@
+mysql -u root -p
+SHOW DATABASES;
+use txl;
+show tables;
+
+-------------------------------------------------------------------------------
+建表语句：
+ CREATE TABLE user(
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ username VARCHAR(18) NOT NULL,
+ pwd CHAR(32)  NOT NULL,
+ sex TINYINT UNSIGNED NOT NULL DEFAULT 0,
+ age TINYINT UNSIGNED NOT NULL,
+ phone CHAR(11) NOT NULL,
+ hobby VARCHAR(255) NOT NULL,
+ address VARCHAR(255) NOT NULL,
+ addtime INT UNSIGNED NOT NULL)ENGINE=MYISAM DEFAULT CHARSET=UTF8;
+修改字符段：
+ ALTER TABLE 表名 CHANGE 原字段名 新字段名 新字段类型 [新列的完整性约束];
+删除字段
+ ALTER TABLE 表名 DROP 字段名；
+删除表：
+ DROP TABLE 表名;
+-------------------------------------------------------------------------------
+
+查看表中所有的字段既查看表结构：
+ DESC 表名；
+查看表中所有字段的内容
+ SELECT * FROM 表名;
+
